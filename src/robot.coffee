@@ -536,6 +536,14 @@ class Robot
     HttpClient.create(url, @extend({}, @globalHttpOptions, options))
       .header('User-Agent', "Hubot/#{@version}")
 
+  # Public: http request without proxy setting
+  #
+  # url - String URL to access.
+  # options - Optional options to pass on to the client
+  nphttp: (url, options) ->
+    HttpClient.create(url, options))
+      .header('User-Agent', "Hubot/#{@version}")
+
   # Private: Extend obj with objects passed as additional args.
   #
   # Returns the original object with updated changes.
