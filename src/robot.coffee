@@ -646,7 +646,7 @@ class Robot
   # url - String URL to access.
   # options - Optional options to pass on to the client
   nphttp: (url, options) ->
-    HttpClient.create(url, options))
+    HttpClient.create(url, @extend({}, {}, options))
       .header('User-Agent', "Hubot/#{@version}")
 
   # Private: Extend obj with objects passed as additional args.
